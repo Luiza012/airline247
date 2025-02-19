@@ -9,3 +9,7 @@ def flight(request, flight_id):
     flight = Flight.objects.get(id=flight_id)
     passengers = flight.passengers.all()
     return render(request, "flights/flight.html", {"flight": flight, "passengers": passengers})
+
+def book(request, flight_id):
+    if request.method == "POST":
+        
